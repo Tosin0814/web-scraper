@@ -26,10 +26,25 @@ const pageData = async () => {
    console.log('TITLE')
    console.log(title, '\n\n')
 
+   // Patent PDF File
+   const patentPDF = parsedPageData("[name='citation_pdf_url']").attr('content')
+   console.log('PATENT PDF FILE')
+   console.log(patentPDF, '\n\n')
+
+   // APPLICATION NUMBER
+   const applicationNumber = parsedPageData("[name='citation_patent_application_number']").attr('content')
+   console.log('APPLICATION NUMBER')
+   console.log(applicationNumber, '\n\n')
+
    // DATE SUBMITTED
    const dateSubmitted = parsedPageData("meta[scheme='dateSubmitted'][name='DC.date']").attr('content')
    console.log('SUBMISSION DATE')
    console.log(dateSubmitted, '\n\n')
+
+   // PATENT NUMBER
+   const patentNumber = parsedPageData("[name='citation_patent_number']").attr('content')
+   console.log('PATENT NUMBER')
+   console.log(patentNumber, '\n\n')
 
    // ISSUE DATE (GRANTED)
    const issueDate = parsedPageData("meta[scheme='issue'][name='DC.date']").attr('content')
